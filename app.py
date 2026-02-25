@@ -61,7 +61,7 @@ def train_model():
 
     df = load_dataset()
 
-    if len(df) < 10:
+    if len(df) < 5:
         return None, None, 0
 
     df["News_Text"] = df["News_Text"].apply(preprocess)
@@ -204,4 +204,5 @@ if st.button("Fetch Live News"):
     live_news = fetch_live_news()
 
     for news in live_news[:5]:
+
         st.write("📰", news)
